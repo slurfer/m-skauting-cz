@@ -17,5 +17,5 @@ datasource db {
 model Organization {
   id             String      @id
   name           String
-  orgNumber         String
+  orgNumber      String
 }
