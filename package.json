@@ -4,7 +4,7 @@
     "private": true,
     "workspaces": [
         "backend",
-        "packages/m-skuating-sdk",
+        "packages/m-skauting-sdk",
         "apps/m-skauting-expo"
     ],
     "scripts": {

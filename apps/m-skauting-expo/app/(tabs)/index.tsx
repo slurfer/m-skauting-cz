@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { StyleSheet, Button } from "react-native"
 import EditScreenInfo from "@/components/EditScreenInfo"
 import { Text, View } from "@/components/Themed"
-import { ApiClient, Maybe, OrganizationDTO } from "m-skuating-sdk"
+import { ApiClient, Maybe, OrganizationDTO } from "m-skauting-sdk"
 
 const client = new ApiClient("http://192.168.1.107:8000")
 
