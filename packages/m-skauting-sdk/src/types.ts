@@ -5,3 +5,5 @@ export type OrganizationDTO = {
     name: string
     orgNumber: string
 }
+
+export type OrganizationUpdateDTO = Partial<Omit<OrganizationDTO, "id">>
