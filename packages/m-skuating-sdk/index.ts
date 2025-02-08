@@ -1,3 +1,3 @@
 export const getRandomText = () => {
-    return 'test';
-};
+    return "test"
+}
