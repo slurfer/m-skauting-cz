@@ -1,0 +1,15 @@
+on: pull_request
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm install
+      - name: Check lint
+        run: npm run lint
+      - name: Check Prettier
+        run: npm run prettier
+      - name: Run tests
+        run: npm test
