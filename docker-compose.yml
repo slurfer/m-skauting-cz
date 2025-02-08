@@ -1,0 +1,8 @@
+services:
+    server:
+        container_name: server
+        image: ghcr.io/slurfer/nodejs-template:latest
+        ports:
+            - 8000:8000
+        environment:
+            - PORT=8000
