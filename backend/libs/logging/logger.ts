@@ -3,7 +3,6 @@ import DailyRotateFile from "winston-daily-rotate-file"
 
 const jsonReadableFormat = format.combine(
     format.printf((info) => {
-        console.log
         if (typeof info.message === "object") {
             info.message = `\n${JSON.stringify(info.message, null, 3)}`
         }

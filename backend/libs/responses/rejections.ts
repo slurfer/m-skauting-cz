@@ -1,4 +1,3 @@
-import { ZodError } from "zod"
 import { Response } from "express"
 import { StatusCodes } from "http-status-codes"
 import FieldProblem from "../../types/badRequest"

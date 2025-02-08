@@ -1,15 +1,16 @@
-import express, { Request, Response, NextFunction } from "express"
+import express, { Request, Response } from "express"
 import logger from "./libs/logging/logger"
+import routes from "./routes"
 
 const app = express()
 const PORT = process.env.PORT || 8000
 
 app.use(express.json())
 
-require("./routes").default(app)
+routes(app)
 
 // Error handler
-app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+app.use((err: Error, req: Request, res: Response) => {
     console.error(err.stack) // Log chyby do konzole
     res.status(500).json({
         message: "Something went wrong!",
