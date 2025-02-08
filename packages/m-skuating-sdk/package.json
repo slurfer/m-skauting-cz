@@ -1,0 +1,12 @@
+{
+    "name": "m-skuating-sdk",
+    "version": "1.0.0",
+    "private": true,
+    "main": "index.ts",
+    "scripts": {
+        "build": "tsc"
+    },
+    "dependencies": {
+        "axios": "^1.7.7"
+    }
+}
