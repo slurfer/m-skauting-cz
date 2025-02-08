@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express"
+import express, { NextFunction, Request, Response } from "express"
 import logger from "./libs/logging/logger"
 import routes from "./routes"
 
@@ -10,8 +10,8 @@ app.use(express.json())
 routes(app)
 
 // Error handler
-app.use((err: Error, req: Request, res: Response) => {
-    console.error(err.stack) // Log chyby do konzole
+app.use((err: Error, req: Request, res: Response, _next: NextFunction) => {
+    logger.error(err.stack)
     res.status(500).json({
         message: "Something went wrong!",
         error: err.message,
