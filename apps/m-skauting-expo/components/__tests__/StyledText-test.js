@@ -9,7 +9,3 @@ it(`renders correctly`, () => {
 
     expect(tree).toMatchSnapshot()
 })
-
-it(`fails`, () => {
-    expect(true).toBe(false)
-})
