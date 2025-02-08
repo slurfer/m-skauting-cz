@@ -1,3 +1,3 @@
-export const test = () => {
-    console.log('test');
+export const getRandomText = () => {
+    return 'test';
 };
