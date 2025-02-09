@@ -29,12 +29,12 @@ FROM node:16-alpine AS production
 WORKDIR /app
 
 COPY packages/m-skauting-sdk packages/m-skauting-sdk
-RUN npm ci --only=production
+RUN npm install
 
 WORKDIR /app/backend
 COPY backend/package*.json .
 
-RUN npm ci --only=production
+RUN npm install
 
 COPY --from=build /app/backend/.dist ./.dist
 RUN ls -la
