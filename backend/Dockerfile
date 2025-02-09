@@ -29,6 +29,7 @@ FROM node:16-alpine AS production
 WORKDIR /app
 
 COPY packages/m-skauting-sdk packages/m-skauting-sdk
+WORKDIR /app/packages/m-skauting-sdk
 RUN npm install
 
 WORKDIR /app/backend
