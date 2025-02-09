@@ -5,12 +5,16 @@ WORKDIR /app
 
 COPY package*.json .
 
-COPY . .
+COPY .. .
 RUN ls -la
 
+WORKDIR /app/packages/m-skauting-sdk
 RUN npm install
 
+WORKDIR /app/backend
+RUN npm install
 
+WORKDIR /app/backend
 RUN npm run build
 
 #Production stage
