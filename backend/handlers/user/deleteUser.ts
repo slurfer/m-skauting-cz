@@ -18,7 +18,6 @@ export default async function (
     } catch (error: unknown) {
         if (error instanceof PrismaClientKnownRequestError) {
             if (error.code === "P2025") {
-                logger.debug(error)
                 return rejectNotFound(res, "User not found")
             }
         }

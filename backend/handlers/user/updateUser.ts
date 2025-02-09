@@ -28,7 +28,6 @@ export default async function (
     } catch (error: unknown) {
         if (error instanceof PrismaClientKnownRequestError) {
             if (error.code === "P2002") {
-                logger.debug(error)
                 return rejectAlreadyExists(res, "User already exists")
             }
         }
