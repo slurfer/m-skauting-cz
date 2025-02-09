@@ -1,6 +1,6 @@
 import { z } from "zod"
 
-export const userSchema = z
+export const UserSchema = z
     .object({
         id: z.string(),
         email: z.string().email({ message: "Zadejte prosím platnou emailovou adresu." }),
@@ -12,8 +12,8 @@ export const userSchema = z
     })
     .strict()
 
-export type user = z.infer<typeof userSchema>
+export type UserDTO = z.infer<typeof UserSchema>
 
-export const UserPartialSchema = userSchema.partial()
+export const UserPartialSchema = UserSchema.partial()
 
-export type UserPartial = z.infer<typeof UserPartialSchema>
+export type UserDTOPartial = z.infer<typeof UserPartialSchema>

@@ -1,14 +1,12 @@
 import { Request, Response, NextFunction } from "express"
 import logger from "../../libs/logging/logger"
-import { UserDTO } from "../../../packages/m-skauting-sdk/src/types"
 import prisma from "../../libs/prisma"
-import { user } from "../../schema/apiSchema"
 import { rejectAlreadyExists } from "../../libs/responses/rejections"
-import { AlreadyExistsRejection } from "m-skauting-sdk"
+import { AlreadyExistsRejection, UserDTO } from "m-skauting-sdk"
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library"
 
 export default async function (
-    req: Request<unknown, unknown, user>,
+    req: Request<unknown, unknown, UserDTO>,
     res: Response<UserDTO | AlreadyExistsRejection>,
     next: NextFunction,
 ) {

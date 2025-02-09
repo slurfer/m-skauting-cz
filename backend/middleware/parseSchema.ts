@@ -3,8 +3,7 @@ import { Request, Response, NextFunction } from "express"
 import { z, ZodError } from "zod"
 import { rejectBadRequestBody } from "../libs/responses/rejections"
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function parseSchema(schema: z.ZodObject<any, any>) {
+export function parseSchema(schema: z.ZodSchema) {
     return (req: Request, res: Response, next: NextFunction) => {
         try {
             schema.parse(req.body)

@@ -1,6 +1,6 @@
 import { Request, Response } from "express"
 import logger from "../../libs/logging/logger"
-import { UserDTO } from "../../../packages/m-skauting-sdk/src/types"
+import { UserDTO } from "m-skauting-sdk"
 import prisma from "../../libs/prisma"
 import { NotFoundRejection } from "m-skauting-sdk"
 import { rejectNotFound } from "../../libs/responses/rejections"

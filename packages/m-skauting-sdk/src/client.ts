@@ -1,6 +1,6 @@
 import { AxiosError, AxiosInstance } from "axios"
 import { createAxiosClient } from "./axios"
-import { OrganizationDTO, OrganizationUpdateDTO } from "./types"
+// import { OrganizationDTO, OrganizationUpdateDTO } from "./types"
 import { ApiError, BadRequestError, NotFoundError } from "./errors"
 
 export class ApiClient {
@@ -10,14 +10,14 @@ export class ApiClient {
         this.axiosClient = createAxiosClient(baseURL)
     }
 
-    async getOrganization(id: string): Promise<OrganizationDTO> {
-        return this.get(`/organization/${id}`)
-    }
+    // async getOrganization(id: string): Promise<OrganizationDTO> {
+    //     return this.get(`/organization/${id}`)
+    // }
 
-    async updateOrganization(id: string, organization: OrganizationUpdateDTO): Promise<OrganizationDTO> {
-        // TODO change to patch
-        return this.get(`/organization/${id}`, organization)
-    }
+    // async updateOrganization(id: string, organization: OrganizationUpdateDTO): Promise<OrganizationDTO> {
+    //     // TODO change to patch
+    //     return this.get(`/organization/${id}`, organization)
+    // }
 
     private async get<T, U>(url: string, params?: T, timeout?: number): Promise<U> {
         try {
