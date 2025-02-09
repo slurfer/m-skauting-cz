@@ -26,6 +26,7 @@ model Organization {
 model User {
   id             String      @id @unique
   email          String   @db.VarChar(256) @unique
+  password       String   @db.VarChar(256)
   firstName      String   @db.VarChar(256)
   lastName       String   @db.VarChar(256)
   nickname       String   @db.VarChar(256)

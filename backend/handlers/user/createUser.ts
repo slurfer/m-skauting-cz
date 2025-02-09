@@ -10,6 +10,7 @@ export default async function (req: Request, res: Response<UserDTO>) {
     res.json({
         id: user.id,
         email: user.email,
+        password: user.password,
         firstName: user.firstName,
         lastName: user.lastName,
         nickname: user.nickname,

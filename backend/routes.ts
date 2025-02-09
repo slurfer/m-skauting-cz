@@ -1,5 +1,7 @@
 import { Router, Express } from "express"
 import createUser from "./handlers/user/createUser"
+import { parseSchema } from "./middleware/parseSchema"
+import { userSchema } from "./schema/apiSchema"
 
 export default (app: Express) => {
     const router = Router()
@@ -9,7 +11,7 @@ export default (app: Express) => {
         res.send("Hello, TypeScript with Express!")
     })
 
-    router.post("/user/", createUser)
+    router.post("/user/", parseSchema(userSchema), createUser)
 
     app.use(router)
 }
