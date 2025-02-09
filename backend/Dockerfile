@@ -3,10 +3,14 @@ FROM node:16-alpine AS build
 
 WORKDIR /app
 
+COPY ../packages/m-skauting-sdk .
+COPY ../backend .
+
+RUN ls -la
+
 COPY package*.json .
 
-COPY .. .
-RUN ls -la
+
 
 WORKDIR /app/packages/m-skauting-sdk
 RUN npm install
