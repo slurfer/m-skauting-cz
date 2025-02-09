@@ -4,7 +4,7 @@ FROM node:16-alpine AS build
 WORKDIR /app
 
 COPY ../packages/m-skauting-sdk .
-COPY ../backend .
+# COPY ../backend .
 
 RUN ls -la
 
