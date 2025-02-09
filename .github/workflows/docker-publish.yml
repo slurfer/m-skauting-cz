@@ -1,13 +1,15 @@
 name: publish
 
 on:
-  push:
-    branches: ["main"]
+  # push:
+  # branches: ["main"]
+  pull_request:
+    types: [labeled]
 
 env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
-  IMAGE_NAME: slurfer/cartrack:latest
+  IMAGE_NAME: slurfer/mskauting-backend:latest
 
 jobs:
   publish:
@@ -22,7 +24,7 @@ jobs:
           echo ${{ secrets.PAT }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
       - name: Build and Publish
         run: |
-          docker build . --tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          docker build . --tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }} --file backend/Dockerfile
           docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
   deploy:
