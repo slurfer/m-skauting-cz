@@ -16,4 +16,4 @@ export type UserDTO = z.infer<typeof UserSchema>
 
 export const UserPartialSchema = UserSchema.partial()
 
-export type UserDTOPartial = z.infer<typeof UserPartialSchema>
+export type UserPartialDTO = z.infer<typeof UserPartialSchema>

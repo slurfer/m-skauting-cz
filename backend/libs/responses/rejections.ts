@@ -11,7 +11,7 @@ export const generalRejection = (res: Response<GeneralRejection>, code: number, 
 }
 
 export const rejectNotFound = (res: Response<NotFoundRejection>, message: string) => {
-    res.status(StatusCodes.NOT_FOUND).json({
+    res.status(StatusCodes.OK).json({
         code: "404",
         name: "NotFound",
         message,
@@ -19,7 +19,7 @@ export const rejectNotFound = (res: Response<NotFoundRejection>, message: string
 }
 
 export const rejectBadRequestBody = (res: Response<BadRequestBodyRejection>, message: string, field: string) => {
-    res.status(StatusCodes.BAD_REQUEST).json({
+    res.status(StatusCodes.OK).json({
         code: "400",
         name: "BadRequestBody",
         message,
@@ -28,5 +28,5 @@ export const rejectBadRequestBody = (res: Response<BadRequestBodyRejection>, mes
 }
 
 export const rejectAlreadyExists = (res: Response<AlreadyExistsRejection>, message: string) => {
-    res.status(StatusCodes.BAD_REQUEST).json({ code: "400", name: "AlreadyExists", message })
+    res.status(StatusCodes.OK).json({ code: "400", name: "AlreadyExists", message })
 }

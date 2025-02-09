@@ -9,6 +9,23 @@ const PORT = process.env.PORT || 8000
 
 app.use(express.json())
 
+// Custom middleware to log HTTP requests
+app.use((req, res, next) => {
+    const start = Date.now()
+
+    // Log incoming request information
+    const { method, url } = req
+
+    // Call next middleware or route handler
+    res.on("finish", () => {
+        const duration = Date.now() - start
+        const status = res.statusCode
+        logger.info(`${method} ${url} ${status} - ${duration}ms`)
+    })
+
+    next()
+})
+
 routes(app)
 
 // Error handler
