@@ -9,3 +9,9 @@ export const userSchema = z.object({
     nickname: z.string(),
     phoneNumber: z.string(),
 })
+
+export type user = z.infer<typeof userSchema>
+
+export const UserPartialSchema = userSchema.partial()
+
+export type UserPartial = z.infer<typeof UserPartialSchema>
